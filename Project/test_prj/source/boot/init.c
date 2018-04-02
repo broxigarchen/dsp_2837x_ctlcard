@@ -34,6 +34,7 @@ void init(void)
 
 /**
  * @ingroup sys
+ *
  * @brief
  * scheduling the task
  * @inpara

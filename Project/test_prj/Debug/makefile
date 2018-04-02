@@ -2,7 +2,9 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-CG_TOOL_ROOT := /home/cg/Software/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS
+SHELL = cmd.exe
+
+CG_TOOL_ROOT := D:/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -16,8 +18,8 @@ $(GEN_CMDS__FLAG) \
 
 -include ../makefile.init
 
-RM := rm -rf
-RMDIR := rm -rf
+RM := DEL /F
+RMDIR := RMDIR /S/Q
 
 # All of the sources participating in the build are defined here
 -include sources.mk
@@ -143,21 +145,21 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 Test_Prj.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: C2000 Linker'
-	"/home/cg/Software/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --advice:performance=all -g --diag_warning=225 --diag_wrap=off --display_error_number -z -m"Test_Prj.map" --stack_size=0x200 --warn_sections -i"/home/cg/Software/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS/lib" -i"/home/cg/Software/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="Test_Prj_linkInfo.xml" --rom_model -o "Test_Prj.out" $(ORDERED_OBJS)
+	"D:/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --advice:performance=all -g --diag_warning=225 --diag_wrap=off --display_error_number -z -m"Test_Prj.map" --stack_size=0x200 --warn_sections -i"D:/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS/lib" -i"D:/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="Test_Prj_linkInfo.xml" --rom_model -o "Test_Prj.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 Test_Prj.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: C2000 Hex Utility'
-	"/home/cg/Software/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS/bin/hex2000"  -o "Test_Prj.hex" $(EXE_OUTPUTS__QUOTED)
+	"D:/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.9.4.LTS/bin/hex2000"  -o "Test_Prj.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "source/boot/init.obj" "source/main.obj" 
-	-$(RM) "source/boot/init.d" "source/main.d" 
+	-$(RM) "source\boot\init.obj" "source\main.obj" 
+	-$(RM) "source\boot\init.d" "source\main.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
