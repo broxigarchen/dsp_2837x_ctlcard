@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+extern int getoptstream(char* buf_in,size_t len,char* optstr);
+extern int argc;
+char rawbuf[] ={"comtest -t"};
+char* p;
+char k;
+void main(void)
+{
+ 	int res;
+	while(1)
+	{
+		res = getoptstream(rawbuf,strlen(rawbuf),"-tso");
+		k=0;
+
+		while((p=getoptdebug(k++)) != NULL)
+		{
+			//printf("%s\n",p);
+			//printf("argc = %d\n",argc);
+		}
+
+		if(res == -1)
+			break;
+		switch(res)
+		{
+			case 't':
+			printf("read t\n");
+				break;
+			case 's':
+			printf("read s\n");
+				break;
+			case 'o':
+			printf("read o\n");
+				break;
+		}
+	}
+}
